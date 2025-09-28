@@ -19,6 +19,9 @@ include("core/types.jl")
 include("core/config.jl")
 include("core/utils.jl")
 
+# Math submodule
+include("math/tensor.jl")
+
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
 export AbstractManifold, AbstractEmbeddedManifold, AbstractMatrixManifold, AbstractLieGroup
@@ -32,5 +35,9 @@ export GLOBAL_CONFIG, set_tolerance!, get_tolerance!, enable_c_acceleration!
 export safe_sqrt, clamped_div, log_sum_exp, softmax, softmax!, horner
 export is_symmetric_matrix, is_skew_symmetric, project_psd, gram_schmidt
 export numerical_jacobian, numerical_gradient, numerical_hessian
+
+# Exports from Math - Tensor
+export Tensor, zeros_tensor, ones_tensor, randn_tensor, to_array
+export is_contiguous, hadamard, contract, frobenius_norm
 
 end # module Spectra
