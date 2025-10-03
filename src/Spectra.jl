@@ -21,6 +21,7 @@ include("core/utils.jl")
 
 # Math submodule
 include("math/tensor.jl")
+include("math/dual.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -39,5 +40,12 @@ export numerical_jacobian, numerical_gradient, numerical_hessian
 # Exports from Math - Tensor
 export Tensor, zeros_tensor, ones_tensor, randn_tensor, to_array
 export is_contiguous, hadamard, contract, frobenius_norm
+
+# Re-export key linear algebra functions
+export norm, dot, I, Diagonal, Symmetric, tr, det, eigen, svd, qr
+
+# Exports from Math - Dual & HyperDual
+export Dual, HyperDual, value, partials
+export forward_diff, forward_gradient, forward_jacobian, forward_hessian
 
 end # module Spectra
