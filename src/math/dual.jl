@@ -127,6 +127,18 @@ Base.isless(a::Dual, b::Dual) = a.val < b.val
 Base.isless(a::Dual, b::Real) = a.val < b
 Base.isless(a::Real, b::Dual) = a < b.val
 
+Base.:<(a::Dual, b::Dual) = a.val < b.val
+Base.:<(a::Dual, b::Real) = a.val < b
+Base.:<(a::Real, b::Dual) = a < b.val
+
+function relu(d::Dual{T, N}) where {T, N}
+    if d.val > zero(T)
+        return d
+    else
+        return Dual{T, N}(zero(T), ntuple(_ -> zero(T), N))
+    end
+end
+
 # ====================================================================
 # Hyper-Dual Numbers for Exact Second-Order Differentiation & Hessians
 # ====================================================================
