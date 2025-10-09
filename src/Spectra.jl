@@ -23,6 +23,7 @@ include("core/utils.jl")
 include("math/tensor.jl")
 include("math/dual.jl")
 include("math/reverse_ad.jl")
+include("math/linalg.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -52,5 +53,10 @@ export forward_diff, forward_gradient, forward_jacobian, forward_hessian
 # Exports from Math - Reverse AD
 export TrackedReal, GradientTape, track, backward!, value_and_gradient, reverse_gradient
 export relu, sigmoid
+
+# Exports from Math - LinAlg
+export gemm_blocked, gemm_blocked!, QRDecomposition, householder_qr
+export SVDDecomposition, bidiagonal_svd, LanczosResult, lanczos, ArnoldiResult, arnoldi
+export gmres, cg
 
 end # module Spectra
