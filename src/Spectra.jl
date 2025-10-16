@@ -24,6 +24,7 @@ include("math/tensor.jl")
 include("math/dual.jl")
 include("math/reverse_ad.jl")
 include("math/linalg.jl")
+include("math/sparse.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -58,5 +59,9 @@ export relu, sigmoid
 export gemm_blocked, gemm_blocked!, QRDecomposition, householder_qr
 export SVDDecomposition, bidiagonal_svd, LanczosResult, lanczos, ArnoldiResult, arnoldi
 export gmres, cg
+
+# Exports from Math - Sparse
+export COOMatrix, CSCMatrix, add_entry!, from_coo, sparse_identity
+export spmv!, to_dense, sparse_cg, nnz
 
 end # module Spectra
