@@ -25,6 +25,7 @@ include("math/dual.jl")
 include("math/reverse_ad.jl")
 include("math/linalg.jl")
 include("math/sparse.jl")
+include("math/spectral_transforms.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -63,5 +64,9 @@ export gmres, cg
 # Exports from Math - Sparse
 export COOMatrix, CSCMatrix, add_entry!, from_coo, sparse_identity
 export spmv!, to_dense, sparse_cg, nnz
+
+# Exports from Math - Spectral Transforms
+export fft_1d, ifft_1d, fft_2d, ifft_2d, dct_1d, idct_1d
+export chebyshev_nodes, chebyshev_polynomial, chebyshev_diff_matrix
 
 end # module Spectra
