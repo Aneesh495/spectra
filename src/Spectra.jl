@@ -26,6 +26,7 @@ include("math/reverse_ad.jl")
 include("math/linalg.jl")
 include("math/sparse.jl")
 include("math/spectral_transforms.jl")
+include("math/optimization.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -68,5 +69,9 @@ export spmv!, to_dense, sparse_cg, nnz
 # Exports from Math - Spectral Transforms
 export fft_1d, ifft_1d, fft_2d, ifft_2d, dct_1d, idct_1d
 export chebyshev_nodes, chebyshev_polynomial, chebyshev_diff_matrix
+
+# Exports from Math - Optimization
+export AbstractOptimizer, SGDMomentum, AdamOptimizer, LBFGSOptimizer
+export update!, optimize_lbfgs, optimize
 
 end # module Spectra
