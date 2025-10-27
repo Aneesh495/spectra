@@ -28,6 +28,9 @@ include("math/sparse.jl")
 include("math/spectral_transforms.jl")
 include("math/optimization.jl")
 
+# Geometry submodule
+include("geometry/manifold.jl")
+
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
 export AbstractManifold, AbstractEmbeddedManifold, AbstractMatrixManifold, AbstractLieGroup
@@ -73,5 +76,10 @@ export chebyshev_nodes, chebyshev_polynomial, chebyshev_diff_matrix
 # Exports from Math - Optimization
 export AbstractOptimizer, SGDMomentum, AdamOptimizer, LBFGSOptimizer
 export update!, optimize_lbfgs, optimize
+
+# Exports from Geometry - Manifold
+export manifold_dim, ambient_dim, inner_product, norm_tangent, project_tangent
+export check_point, check_tangent, exp_map, log_map, geodesic_distance
+export parallel_transport, retraction, geodesic
 
 end # module Spectra
