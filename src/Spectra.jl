@@ -30,6 +30,8 @@ include("math/optimization.jl")
 
 # Geometry submodule
 include("geometry/manifold.jl")
+include("geometry/sphere.jl")
+include("geometry/hyperbolic.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -77,9 +79,11 @@ export chebyshev_nodes, chebyshev_polynomial, chebyshev_diff_matrix
 export AbstractOptimizer, SGDMomentum, AdamOptimizer, LBFGSOptimizer
 export update!, optimize_lbfgs, optimize
 
-# Exports from Geometry - Manifold
+# Exports from Geometry - Manifolds
 export manifold_dim, ambient_dim, inner_product, norm_tangent, project_tangent
 export check_point, check_tangent, exp_map, log_map, geodesic_distance
 export parallel_transport, retraction, geodesic
+export Sphere, random_point, PoincareBall, mobius_add, LorentzHyperboloid
+export minkowski_dot, poincare_to_lorentz, lorentz_to_poincare
 
 end # module Spectra
