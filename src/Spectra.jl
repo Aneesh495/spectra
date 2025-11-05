@@ -32,6 +32,10 @@ include("math/optimization.jl")
 include("geometry/manifold.jl")
 include("geometry/sphere.jl")
 include("geometry/hyperbolic.jl")
+include("geometry/stiefel.jl")
+include("geometry/grassmannian.jl")
+include("geometry/spd.jl")
+include("geometry/so3_se3.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -85,5 +89,9 @@ export check_point, check_tangent, exp_map, log_map, geodesic_distance
 export parallel_transport, retraction, geodesic
 export Sphere, random_point, PoincareBall, mobius_add, LorentzHyperboloid
 export minkowski_dot, poincare_to_lorentz, lorentz_to_poincare
+export Stiefel, cayley_retraction, Grassmannian, principal_angles
+export SPDManifold, matrix_sqrt_sym, matrix_log_sym, matrix_exp_sym
+export SO3Group, hat_so3, vee_so3, exp_so3, log_so3
+export SE3Group, hat_se3, vee_se3, exp_se3, log_se3, left_jacobian_so3
 
 end # module Spectra
