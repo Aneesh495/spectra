@@ -31,10 +31,17 @@ end
 function exp_map(::Sphere{N}, p::Vector{Float64}, v::Vector{Float64})::Vector{Float64} where {N}
     theta = norm(v)
     if theta < 1e-15
-        return copy(p)
+        return p ./ norm(p)
     end
     u = v ./ theta
-    return cos(theta) .* p .+ sin(theta) .* u
+    res = cos(theta) .* p .+ sin(theta) .* u
+    return res ./ norm(res)
+end
+
+function retraction(::Sphere{N}, p::Vector{Float64}, v::Vector{Float64})::Vector{Float64} where {N}
+    # First-order metric projection retraction: (p + v) / ||p + v||
+    res = p .+ v
+    return res ./ norm(res)
 end
 
 function log_map(::Sphere{N}, p::Vector{Float64}, q::Vector{Float64})::Vector{Float64} where {N}

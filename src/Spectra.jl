@@ -36,6 +36,7 @@ include("geometry/stiefel.jl")
 include("geometry/grassmannian.jl")
 include("geometry/spd.jl")
 include("geometry/so3_se3.jl")
+include("geometry/riemannian_opt.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -93,5 +94,6 @@ export Stiefel, cayley_retraction, Grassmannian, principal_angles
 export SPDManifold, matrix_sqrt_sym, matrix_log_sym, matrix_exp_sym
 export SO3Group, hat_so3, vee_so3, exp_so3, log_so3
 export SE3Group, hat_se3, vee_se3, exp_se3, log_se3, left_jacobian_so3
+export riemannian_gradient, riemannian_gradient_descent, riemannian_cg, riemannian_adam
 
 end # module Spectra
