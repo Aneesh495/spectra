@@ -218,6 +218,25 @@ function to_dense(A::CSCMatrix{T})::Matrix{T} where {T}
 end
 
 """
+    dense_to_csc(M::Matrix{T}) -> CSCMatrix{T}
+
+Convert dense matrix into pure Julia CSCMatrix.
+"""
+function dense_to_csc(M::Matrix{T})::CSCMatrix{T} where {T}
+    r, c = size(M)
+    coo = COOMatrix(r, c)
+    @inbounds for j in 1:c
+        for i in 1:r
+            v = M[i, j]
+            if abs(v) > 1e-15
+                add_entry!(coo, i, j, v)
+            end
+        end
+    end
+    return from_coo(coo)
+end
+
+"""
     sparse_cg(A::CSCMatrix{Float64}, b::Vector{Float64}; tol::Float64=1e-10, max_iter::Int=200) -> (x, conv, residuals)
 
 Specialized Conjugate Gradient solver directly operating on CSCMatrix without allocating dense matrices.

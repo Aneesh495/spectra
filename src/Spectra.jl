@@ -38,6 +38,9 @@ include("geometry/spd.jl")
 include("geometry/so3_se3.jl")
 include("geometry/riemannian_opt.jl")
 
+# Sheaves submodule
+include("sheaves/cell_complex.jl")
+
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
 export AbstractManifold, AbstractEmbeddedManifold, AbstractMatrixManifold, AbstractLieGroup
@@ -74,7 +77,7 @@ export gmres, cg
 
 # Exports from Math - Sparse
 export COOMatrix, CSCMatrix, add_entry!, from_coo, sparse_identity
-export spmv!, to_dense, sparse_cg, nnz
+export spmv!, to_dense, dense_to_csc, sparse_cg, nnz
 
 # Exports from Math - Spectral Transforms
 export fft_1d, ifft_1d, fft_2d, ifft_2d, dct_1d, idct_1d
@@ -95,5 +98,10 @@ export SPDManifold, matrix_sqrt_sym, matrix_log_sym, matrix_exp_sym
 export SO3Group, hat_so3, vee_so3, exp_so3, log_so3
 export SE3Group, hat_se3, vee_se3, exp_se3, log_se3, left_jacobian_so3
 export riemannian_gradient, riemannian_gradient_descent, riemannian_cg, riemannian_adam
+
+# Exports from Sheaves - CellComplex
+export Simplex, CellComplex, num_vertices, num_edges, num_faces
+export add_edge!, add_face!, boundary_matrix_1, boundary_matrix_2
+export verify_boundary_property, graph_laplacian, hodge_laplacian_1, betti_numbers
 
 end # module Spectra
