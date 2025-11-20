@@ -41,6 +41,7 @@ include("geometry/riemannian_opt.jl")
 # Sheaves submodule
 include("sheaves/cell_complex.jl")
 include("sheaves/cellular_sheaf.jl")
+include("sheaves/sheaf_laplacian.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -100,12 +101,14 @@ export SO3Group, hat_so3, vee_so3, exp_so3, log_so3
 export SE3Group, hat_se3, vee_se3, exp_se3, log_se3, left_jacobian_so3
 export riemannian_gradient, riemannian_gradient_descent, riemannian_cg, riemannian_adam
 
-# Exports from Sheaves - CellComplex & CellularSheaf
+# Exports from Sheaves
 export Simplex, CellComplex, num_vertices, num_edges, num_faces
 export add_edge!, add_face!, boundary_matrix_1, boundary_matrix_2
 export verify_boundary_property, graph_laplacian, hodge_laplacian_1, betti_numbers
 export CellularSheaf, total_cochain_dim_0, total_cochain_dim_1
 export vertex_range, edge_range, set_restriction!, get_restriction
 export trivial_sheaf, connection_sheaf
+export SheafLaplacian, sheaf_coboundary, sheaf_laplacian, dirichlet_energy
+export global_sections, sheaf_cohomology_dim, sheaf_spectrum
 
 end # module Spectra
