@@ -42,6 +42,8 @@ include("geometry/riemannian_opt.jl")
 include("sheaves/cell_complex.jl")
 include("sheaves/cellular_sheaf.jl")
 include("sheaves/sheaf_laplacian.jl")
+include("sheaves/sheaf_diffusion.jl")
+include("sheaves/sheaf_neural_net.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -110,5 +112,7 @@ export vertex_range, edge_range, set_restriction!, get_restriction
 export trivial_sheaf, connection_sheaf
 export SheafLaplacian, sheaf_coboundary, sheaf_laplacian, dirichlet_energy
 export global_sections, sheaf_cohomology_dim, sheaf_spectrum
+export sheaf_diffusion_step, sheaf_diffusion_solve, solve_sheaf_dirichlet
+export NeuralSheafLayer, build_learned_sheaf, forward_sheaf_layer
 
 end # module Spectra

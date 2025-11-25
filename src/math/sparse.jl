@@ -132,7 +132,7 @@ end
 High-performance SpMV: y = alpha * A * x + beta * y.
 Traverses column slices with cache-friendly contiguous reads.
 """
-function spmv!(y::Vector{T}, A::CSCMatrix{T}, x::Vector{T}, alpha::T=one(T), beta::T=zero(T)) where {T<:Real}
+function spmv!(y::Vector{T}, A::CSCMatrix{T}, x::AbstractVector{T}, alpha::T=one(T), beta::T=zero(T)) where {T<:Real}
     @assert length(x) == A.n "Dimension mismatch: length(x) = $(length(x)), A.n = $(A.n)"
     @assert length(y) == A.m "Dimension mismatch: length(y) = $(length(y)), A.m = $(A.m)"
 
@@ -156,7 +156,7 @@ function spmv!(y::Vector{T}, A::CSCMatrix{T}, x::Vector{T}, alpha::T=one(T), bet
     return y
 end
 
-function Base.:*(A::CSCMatrix{T}, x::Vector{T})::Vector{T} where {T<:Real}
+function Base.:*(A::CSCMatrix{T}, x::AbstractVector{T})::Vector{T} where {T<:Real}
     y = zeros(T, A.m)
     return spmv!(y, A, x)
 end
