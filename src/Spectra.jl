@@ -44,6 +44,7 @@ include("sheaves/cellular_sheaf.jl")
 include("sheaves/sheaf_laplacian.jl")
 include("sheaves/sheaf_diffusion.jl")
 include("sheaves/sheaf_neural_net.jl")
+include("sheaves/persistent_homology.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -114,5 +115,6 @@ export SheafLaplacian, sheaf_coboundary, sheaf_laplacian, dirichlet_energy
 export global_sections, sheaf_cohomology_dim, sheaf_spectrum
 export sheaf_diffusion_step, sheaf_diffusion_solve, solve_sheaf_dirichlet
 export NeuralSheafLayer, build_learned_sheaf, forward_sheaf_layer
+export PersistenceInterval, FilteredSimplex, vietoris_rips_filtration, compute_persistence_diagram
 
 end # module Spectra
