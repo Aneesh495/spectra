@@ -46,6 +46,10 @@ include("sheaves/sheaf_diffusion.jl")
 include("sheaves/sheaf_neural_net.jl")
 include("sheaves/persistent_homology.jl")
 
+# Dynamics submodule
+include("dynamics/ode_tableau.jl")
+include("dynamics/ode_integrator.jl")
+
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
 export AbstractManifold, AbstractEmbeddedManifold, AbstractMatrixManifold, AbstractLieGroup
@@ -116,5 +120,8 @@ export global_sections, sheaf_cohomology_dim, sheaf_spectrum
 export sheaf_diffusion_step, sheaf_diffusion_solve, solve_sheaf_dirichlet
 export NeuralSheafLayer, build_learned_sheaf, forward_sheaf_layer
 export PersistenceInterval, FilteredSimplex, vietoris_rips_filtration, compute_persistence_diagram
+
+# Exports from Dynamics - ODE
+export AbstractButcherTableau, DP54Tableau, TS54Tableau, ODESolution, integrate_ode
 
 end # module Spectra
