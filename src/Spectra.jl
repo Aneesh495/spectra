@@ -49,6 +49,7 @@ include("sheaves/persistent_homology.jl")
 # Dynamics submodule
 include("dynamics/ode_tableau.jl")
 include("dynamics/ode_integrator.jl")
+include("dynamics/symplectic_integrator.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -121,7 +122,8 @@ export sheaf_diffusion_step, sheaf_diffusion_solve, solve_sheaf_dirichlet
 export NeuralSheafLayer, build_learned_sheaf, forward_sheaf_layer
 export PersistenceInterval, FilteredSimplex, vietoris_rips_filtration, compute_persistence_diagram
 
-# Exports from Dynamics - ODE
+# Exports from Dynamics
 export AbstractButcherTableau, DP54Tableau, TS54Tableau, ODESolution, integrate_ode
+export SymplecticSolution, verlet_step, forest_ruth_step, integrate_symplectic, gauss_legendre_4_step
 
 end # module Spectra
