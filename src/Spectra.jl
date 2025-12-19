@@ -51,6 +51,7 @@ include("dynamics/ode_tableau.jl")
 include("dynamics/ode_integrator.jl")
 include("dynamics/symplectic_integrator.jl")
 include("dynamics/sde_integrator.jl")
+include("dynamics/adjoint.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -127,5 +128,6 @@ export PersistenceInterval, FilteredSimplex, vietoris_rips_filtration, compute_p
 export AbstractButcherTableau, DP54Tableau, TS54Tableau, ODESolution, integrate_ode
 export SymplecticSolution, verlet_step, forest_ruth_step, integrate_symplectic, gauss_legendre_4_step
 export SDESolution, integrate_sde_euler_maruyama, integrate_sde_milstein
+export AdjointResult, adjoint_sensitivity
 
 end # module Spectra
