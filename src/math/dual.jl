@@ -277,7 +277,11 @@ Compute exact derivative f'(x) via single-direction dual numbers.
 function forward_diff(f, x::T) where {T<:Real}
     d = Dual{T, 1}(x, (one(T),))
     res = f(d)
-    return res.partials[1]
+    if res isa Dual
+        return res.partials[1]
+    else
+        return zero(T)
+    end
 end
 
 """
