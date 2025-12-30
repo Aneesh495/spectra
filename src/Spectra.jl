@@ -53,6 +53,8 @@ include("dynamics/symplectic_integrator.jl")
 include("dynamics/sde_integrator.jl")
 include("dynamics/adjoint.jl")
 include("dynamics/neural_ode.jl")
+include("dynamics/hamiltonian_nn.jl")
+include("dynamics/port_hamiltonian.jl")
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -131,5 +133,7 @@ export SymplecticSolution, verlet_step, forest_ruth_step, integrate_symplectic, 
 export SDESolution, integrate_sde_euler_maruyama, integrate_sde_milstein
 export AdjointResult, adjoint_sensitivity
 export NeuralODEVectorField, NeuralODE, AugmentedNeuralODE, forward, train_step!, get_params, set_params!
+export HamiltonianEnergyMLP, HamiltonianNeuralNetwork, hamiltonian, symplectic_gradient, vector_field, integrate_trajectory
+export PortHamiltonianNN, get_dissipation_matrix, energy_dissipation_rate, integrate_port_hamiltonian
 
 end # module Spectra
