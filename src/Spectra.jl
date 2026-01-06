@@ -56,6 +56,10 @@ include("dynamics/neural_ode.jl")
 include("dynamics/hamiltonian_nn.jl")
 include("dynamics/port_hamiltonian.jl")
 
+# Operators submodule
+include("operators/fno1d.jl")
+include("operators/fno2d.jl")
+
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
 export AbstractManifold, AbstractEmbeddedManifold, AbstractMatrixManifold, AbstractLieGroup
@@ -135,5 +139,9 @@ export AdjointResult, adjoint_sensitivity
 export NeuralODEVectorField, NeuralODE, AugmentedNeuralODE, forward, train_step!, get_params, set_params!
 export HamiltonianEnergyMLP, HamiltonianNeuralNetwork, hamiltonian, symplectic_gradient, vector_field, integrate_trajectory
 export PortHamiltonianNN, get_dissipation_matrix, energy_dissipation_rate, integrate_port_hamiltonian
+
+# Exports from Operators - FNO
+export SpectralConv1D, forward_spectral_conv, FourierNeuralOperator1D, gelu
+export SpectralConv2D, forward_spectral_conv_2d, FourierNeuralOperator2D
 
 end # module Spectra
