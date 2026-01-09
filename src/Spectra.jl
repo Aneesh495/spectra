@@ -59,6 +59,9 @@ include("dynamics/port_hamiltonian.jl")
 # Operators submodule
 include("operators/fno1d.jl")
 include("operators/fno2d.jl")
+include("operators/cno.jl")
+include("operators/wno.jl")
+
 
 # Exports from Core
 export AbstractSpectraType, AbstractTensor, AbstractDenseTensor, AbstractSparseTensor
@@ -143,5 +146,11 @@ export PortHamiltonianNN, get_dissipation_matrix, energy_dissipation_rate, integ
 # Exports from Operators - FNO
 export SpectralConv1D, forward_spectral_conv, FourierNeuralOperator1D, gelu
 export SpectralConv2D, forward_spectral_conv_2d, FourierNeuralOperator2D
+
+# Exports from Operators - CNO & WNO
+export ChebyshevConv1D, forward_chebyshev_conv, ChebyshevNeuralOperator1D
+export dwt_step_haar, idwt_step_haar, dwt_step_d4, idwt_step_d4, MultiLevelWaveletDecomposition
+export forward_dwt_1d, inverse_dwt_1d, WaveletConv1D, forward_wavelet_conv, WaveletNeuralOperator1D
+
 
 end # module Spectra
