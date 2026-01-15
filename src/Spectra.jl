@@ -61,6 +61,9 @@ include("operators/fno1d.jl")
 include("operators/fno2d.jl")
 include("operators/cno.jl")
 include("operators/wno.jl")
+include("operators/deeponet.jl")
+include("operators/pde_solvers.jl")
+
 
 
 # Exports from Core
@@ -152,5 +155,9 @@ export ChebyshevConv1D, forward_chebyshev_conv, ChebyshevNeuralOperator1D
 export dwt_step_haar, idwt_step_haar, dwt_step_d4, idwt_step_d4, MultiLevelWaveletDecomposition
 export forward_dwt_1d, inverse_dwt_1d, WaveletConv1D, forward_wavelet_conv, WaveletNeuralOperator1D
 
+# Exports from Operators - DeepONet & PDESolvers
+export BranchNet, TrunkNet, DeepONet
+export gaussian_random_field_1d, solve_burgers_1d, solve_darcy_2d, solve_navier_stokes_2d
 
 end # module Spectra
+
