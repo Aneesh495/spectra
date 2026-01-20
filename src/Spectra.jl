@@ -64,6 +64,12 @@ include("operators/wno.jl")
 include("operators/deeponet.jl")
 include("operators/pde_solvers.jl")
 
+# Koopman submodule
+include("koopman/dmd.jl")
+include("koopman/edmd.jl")
+include("koopman/deep_koopman.jl")
+
+
 
 
 # Exports from Core
@@ -159,5 +165,13 @@ export forward_dwt_1d, inverse_dwt_1d, WaveletConv1D, forward_wavelet_conv, Wave
 export BranchNet, TrunkNet, DeepONet
 export gaussian_random_field_1d, solve_burgers_1d, solve_darcy_2d, solve_navier_stokes_2d
 
+# Exports from Koopman - DMD, EDMD, Deep Koopman
+export ExactDMDResult, exact_dmd, predict, predict_trajectory, build_hankel_matrix, hankel_dmd
+export StreamingDMD, get_operator
+export AbstractDictionary, PolynomialDictionary, RBFDictionary, evaluate
+export EDMDResult, extended_dmd, koopman_eigenfunction, predict_next
+export DeepKoopmanNet, encode, decode, rollout, compute_loss, fit_linear_operator!
+
 end # module Spectra
+
 
