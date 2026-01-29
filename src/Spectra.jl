@@ -70,6 +70,10 @@ include("koopman/edmd.jl")
 include("koopman/deep_koopman.jl")
 include("koopman/transfer_operators.jl")
 
+# FFI submodule
+include("ffi/c_bridge.jl")
+
+
 
 
 
@@ -176,7 +180,12 @@ export DeepKoopmanNet, encode, decode, rollout, compute_loss, fit_linear_operato
 export BoxPartition1D, find_box, BoxPartition2D, PerronFrobeniusResult
 export ulam_perron_frobenius, almost_invariant_sets, pushforward_density
 
+# Exports from FFI - Native C Kernel
+export is_c_kernel_available, c_simd_gemm!, c_simd_tensor_contract, c_chebyshev_eval
+export c_symplectic_step, c_sheaf_diffuse
+
 end # module Spectra
+
 
 
 

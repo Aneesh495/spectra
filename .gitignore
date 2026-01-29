@@ -1,34 +1,29 @@
-# Julia
-*.jl.cov
-*.jl.*.cov
-*.jl.mem
-deps/deps.jl
-
-# C / C++ build artifacts
+# Build artifacts
+build/*.dylib
+build/*.so
+build/*.dll
+build/*.o
+build/*.a
+build/bin/
 *.o
 *.so
 *.dylib
 *.dll
-*.a
-bin/spectra_native
-build/
-cmake-build-*/
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.venv/
-venv/
-
-# macOS
+# OS files
 .DS_Store
-.AppleDouble
-.LSOverride
+Thumbs.db
 
-# Editor
-.vscode/
-.idea/
-*.swp
-*~
+# Julia temporary files
+*.jl.*.cov
+*.jl.cov
+*.jl.mem
+
+# Python cache
+__pycache__/
+*.pyc
+
+# C++ build
+cmake-build-*/
+.cache/
+compile_commands.json
