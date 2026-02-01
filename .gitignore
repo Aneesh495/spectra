@@ -1,11 +1,7 @@
 # Build artifacts
-build/*.dylib
-build/*.so
-build/*.dll
-build/*.o
-build/*.a
-build/bin/
+build/
 *.o
+
 *.so
 *.dylib
 *.dll
