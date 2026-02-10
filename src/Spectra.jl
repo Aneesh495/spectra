@@ -76,6 +76,8 @@ include("ffi/c_bridge.jl")
 # Visualization submodule
 include("viz/terminal_canvas.jl")
 include("viz/plot_spectrogram.jl")
+include("viz/web_dashboard.jl")
+
 
 
 
@@ -189,9 +191,10 @@ export ulam_perron_frobenius, almost_invariant_sets, pushforward_density
 export is_c_kernel_available, c_simd_gemm!, c_simd_tensor_contract, c_chebyshev_eval
 export c_symplectic_step, c_sheaf_diffuse
 
-# Exports from Viz - Terminal Graphics
+# Exports from Viz - Terminal Graphics & Web Dashboard
 export BrailleCanvas, set_pixel!, set_point!, draw_line!, render_to_string
 export terminal_plot, terminal_phase_portrait, terminal_heatmap, terminal_spectrum_bars
+export generate_html_dashboard
 
 end # module Spectra
 
