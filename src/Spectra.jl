@@ -78,6 +78,10 @@ include("viz/terminal_canvas.jl")
 include("viz/plot_spectrogram.jl")
 include("viz/web_dashboard.jl")
 
+# CLI submodule
+include("cli/dispatcher.jl")
+
+
 
 
 
@@ -195,6 +199,9 @@ export c_symplectic_step, c_sheaf_diffuse
 export BrailleCanvas, set_pixel!, set_point!, draw_line!, render_to_string
 export terminal_plot, terminal_phase_portrait, terminal_heatmap, terminal_spectrum_bars
 export generate_html_dashboard
+
+# Exports from CLI
+export cli_main
 
 end # module Spectra
 
