@@ -11,7 +11,10 @@ struct SheafLaplacian <: AbstractSheafLaplacian
     dense_matrix::Matrix{Float64}
 end
 
+SheafLaplacian(sheaf::CellularSheaf) = sheaf_laplacian(sheaf)
+
 Base.size(L::SheafLaplacian) = size(L.matrix)
+
 Base.size(L::SheafLaplacian, d::Int) = size(L.matrix, d)
 
 """
