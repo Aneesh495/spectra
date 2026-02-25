@@ -152,14 +152,14 @@ function riemannian_adam(M::AbstractManifold, cost_and_grad, p0;
         v_hat = v_tangent ./ bc2
 
         # Step direction
-        step_dir = -lr .* (m_hat ./ (sqrt.(v_hat) .+ eps))
+        step_dir = -lr .* (m_hat ./ (sqrt.(max.(v_hat, 0.0)) .+ eps))
         step_dir_proj = project_tangent(M, p, step_dir)
 
         p_next = retraction(M, p, step_dir_proj)
 
         # Transport moment vectors to new tangent space
         m_tangent = project_tangent(M, p_next, m_tangent)
-        v_tangent = project_tangent(M, p_next, v_tangent)
+        v_tangent = max.(project_tangent(M, p_next, v_tangent), 0.0)
 
         p = p_next
     end

@@ -134,3 +134,6 @@ function sheaf_spectrum(L::SheafLaplacian)::Vector{Float64}
     vals = eigvals(Symmetric(L.dense_matrix))
     return sort(max.(vals, 0.0))
 end
+
+sheaf_spectrum(sheaf::CellularSheaf)::Vector{Float64} = sheaf_spectrum(SheafLaplacian(sheaf))
+
