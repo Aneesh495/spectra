@@ -86,6 +86,13 @@
     font-size: 12px;
     color: var(--accent-blue);
   }
+  .export-note { margin: 1rem auto; padding: 0 1rem; max-width: 72rem; line-height: 1.55; color: #c9d7e6; }
+  .export-note a { color: #9bdeff; }
+  @media (max-width: 760px) {
+    .dashboard-grid, .grid { display: grid; grid-template-columns: minmax(0, 1fr); }
+    canvas { max-width: 100%; }
+    header { flex-wrap: wrap; }
+  }
 </style>
 </head>
 <body>
@@ -95,14 +102,15 @@
     <h1>Spectra Geometric & Neural Operator Studio</h1>
     <p style="color: var(--text-secondary); font-size: 14px;">Pure Julia Continuous Dynamics, Sheaf Cohomology & Spectral Operator Studio</p>
   </div>
-  <div class="badge">SPECTRA ACTIVE</div>
+  <div class="badge">RECORDED DASHBOARD</div>
 </header>
+<p class="export-note">Inspect the geometry, phase trajectory, and field data embedded in this export. <a href="https://github.com/Aneesh495/spectra/tree/main/src/viz">Julia visualization source</a></p>
 
 <div class="grid">
   <!-- Panel 1: 3D Riemannian Manifold -->
   <div class="card">
     <div class="card-title">
-      <span style="color: var(--accent-purple);">●</span> 3D Riemannian Manifold (S^2 Geodesic Surface)
+      <span style="color: var(--accent-purple);">●</span> Riemannian manifold explorer
     </div>
     <canvas id="manifoldCanvas" width="460" height="300"></canvas>
     <div class="controls">
